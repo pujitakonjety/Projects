@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'bulma.css' %}">
+    <style>
+        .mywidth{
+            width:20%;
+        }
+     </style>
+</head>
+<body>
+<div align = "center">
+    <table border = 1 class = "table is-bordered is-striped is-narrow is-hoverable ">
+        <nav class = "navbar is-fixed-top is-black" >
+             <a href = "/student/{{ college_details }}/add"><button class = "button is-dark" >Add</button></a>
+        </nav>
+        <br><br>
+        <h1><font size =  10px>All Students from {{ title }}</font></h1>
+        {% for college in key %}
+        <tr>
+            <td>
+                {{college.name | safe}}
+            </td>
+            <td>
+               {{college.mocktest1__total | safe}}
+            </td>
+            <td>
+                <a href = "/student/{{ college.id }}/delete"><button class = "button is-dark">Delete</button></a>
+                <a href = "/student/{{ college.id }}/edit"><button class = "button is-dark">Edit</button></a>
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+
+</div>
+</body>
+</html>

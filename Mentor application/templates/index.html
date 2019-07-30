@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'bulma.css' %}">
+    <style>
+        .mywidth{
+            width:20%;
+        }
+     </style>
+</head>
+<body>
+<div align = "center">
+    <font size = 10px>Edit College</font>
+    <form method = "post" class = "post-form" >
+    {% csrf_token %}
+    {{ form.name }}<br><br>
+    {{ form.location }}<br><br>
+    {{ form.acronym }}<br><br>
+    {{ form.contact }}<br><br>
+    <input type = "submit" class = "button is-dark">
+</form>
+</div>
+
+</body>
+</html>

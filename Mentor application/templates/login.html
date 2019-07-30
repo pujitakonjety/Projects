@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'bulma.css' %}">
+    <style>
+        .mywidth{
+            width:20%;
+        }
+    </style>
+</head>
+<body>
+<center><font size = 10px>Loginform</font></center><br><br>
+    <div align = "center">
+        <form method = "post" class = "post-form" >
+        {% csrf_token %}
+        <!--{{ form.as_p }}-->
+        {{ form.name }}<br><br>
+        {{ form.password }}<br><br>
+        <input type = "submit" class = "button is-dark">
+</form>
+        <br>
+<a href = /signup><button class = "button is-dark">SIGNUP</button></a>
+
+</div>
+
+</body>
+</html>

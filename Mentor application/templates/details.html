@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> title </title>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'bulma.css' %}">
+    <style>
+         $blue: hsl(217, 71%, 53%);
+        $table-head-background-color: $blue;
+    </style>
+
+</head>
+<body>
+<nav class = "navbar is-fixed-top is-black" >
+    <a href =  "/logout" class = "navbar-brand" ><button class = "button is-dark">logout</button></a>
+    <a href = "/colleges/add" class="navbar-brand"><button class = "button is-dark">addcollege</button></a>
+
+</nav>
+<br>
+<br>
+<div>
+    <center><font size = 10px>MRND COLLEGES</font></center>
+</div>
+<center>
+
+    <table border = 1 class = "table is-bordered is-striped is-narrow is-hoverable "  >
+
+        <tr>
+            <th>Name</th>
+            <th>Id</th>
+            <th>Acromyn</th>
+            {% if 'onlineapp.change_college' in user_permissions %}
+            <th>Options</th>
+            {% endif %}
+        </tr>
+        {% for college in key %}
+        <tr class = "is-selected">
+            <td>
+                {{college.name | safe}}
+            </td>
+            <td>
+                <!--<a href  = "/onlineapp/clg_student_id/{{ college.id }}">/onlineapp/clg_student_id/{{college.id | safe}}</a>-->
+                <a href  = "/colleges/{{ college.id}}">{{college.id | safe}}</a>
+            </td>
+            <td>
+                <a href  = "/colleges/{{ college.acronym }}">{{college.acronym | safe}}</a>
+            </td>
+            {% if 'onlineapp.change_college' in user_permissions %}
+            <td>
+
+                <a href = "/colleges/{{ college.id }}/edit"><button class = "button is-dark">Edit</button></a>
+                <a href = "/colleges/{{ college.id }}/delete"><button class = "button is-dark">Delete</button></a>
+            </td>
+            {% endif %}
+        </tr>
+        {%endfor%}
+    </table>
+    </center>
+</body>
+</html>

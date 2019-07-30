@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'bulma.css' %}">
+    <style>
+        .mywidth{
+            width:20%;
+        }
+     </style>
+</head>
+<body>
+<div align = "center">
+    <font size = 10px>Student details</font>
+    <form method = "post" class = "post-form" >
+    {% csrf_token %}
+    <!--{{ form1.as_p }}-->
+    <!--{{ form2.as_p }}-->
+    {{ form1.name }}<br><br>
+     {{ form1.email }}<br><br>
+     {{ form1.db_folder }}<br><br>
+     {{ form2.problem1 }}<br><br>
+     {{ form2.problem2 }}<br><br>
+     {{ form2.problem3 }}<br><br>
+     {{ form2.problem4 }}<br><br>
+     {{ form2.total }}<br><br>
+     {{ form1.dropped_out }}Dropped_out<br><br>
+    <input type = "submit" class = "button is-dark">
+</form>
+
+</div>
+</body>
+</html>
