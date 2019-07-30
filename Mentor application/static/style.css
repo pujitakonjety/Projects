@@ -1,0 +1,37 @@
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: cream;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button_css {
+  background-color: blue;
+  border-color: #dbdbdb;
+  border-width: 1px;
+  color: #363636;
+  cursor: pointer;
+  justify-content: center;
+  padding-bottom: calc(0.375em - 1px);
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  padding-top: calc(0.375em - 1px);
+  text-align: center;
+  white-space: nowrap;
+}
